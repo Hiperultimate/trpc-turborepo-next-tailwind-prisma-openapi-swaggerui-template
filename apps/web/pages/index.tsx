@@ -7,8 +7,10 @@ export default function Home() {
 
   return (
     <>
-      Hello
-      <Button />
+      <div className="flex">
+        <span className="m-4">Hello</span>
+        <Button />
+      </div>
     </>
   );
 }
