@@ -7,9 +7,11 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex">
-        <span className="m-4">Hello</span>
-        <Button />
+      <div className="flex flex-col">
+        <span className="p-5 text-lg font-bold">Web Page</span>
+        <div className="mx-4">
+          <Button />
+        </div>
       </div>
     </>
   );
