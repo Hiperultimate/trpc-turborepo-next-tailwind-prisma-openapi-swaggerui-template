@@ -10,7 +10,8 @@
     "eslint": "^8.47.0",
     "prettier": "^3.0.2",
     "tsconfig": "*",
-    "turbo": "latest"
+    "turbo": "latest",
+    "prettier-config" : "*"
   },
   "name": "monorepo-template",
   "packageManager": "yarn@1.22.19",
