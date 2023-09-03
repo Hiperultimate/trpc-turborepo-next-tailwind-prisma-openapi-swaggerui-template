@@ -7,9 +7,9 @@ export const exampleRouter = t.router({
         return { message: "Sending message from route" };
     }),
 
-    // http://localhost:3002/api/example.exampleApi?Something
-    exampleInput: t.procedure.input(z.string()).query((opts) => {
-        opts.input; // string
-        return { id: opts.input, name: 'Bilbo' };
+    // http://localhost:3002/api/example.exampleInput?input="1234"
+    exampleInput: t.procedure.input(z.string()).query((req) => {
+        req.input; // string
+        return { id: req.input, name: 'Bilbo' };
     }),
 });
