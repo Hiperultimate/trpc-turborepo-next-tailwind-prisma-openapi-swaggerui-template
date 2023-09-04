@@ -1,8 +1,8 @@
 import * as trpcExpress from '@trpc/server/adapters/express';
 import cors from "cors";
 import express from 'express';
-import { createContext } from "./trpc";
-import { appRouter } from "./routers/index";
+import { createContext } from "./context";
+import { appRouter } from "./routers/root";
 
 
 const port: number = 3002 as const;
@@ -24,5 +24,3 @@ app.use(
 app.listen(port, () => {
     console.log(`started server on [::]:${port}, url: http://localhost:${port}`);
 });
-
-export type AppRouter = typeof appRouter;
