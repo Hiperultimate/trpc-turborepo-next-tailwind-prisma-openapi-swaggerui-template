@@ -6,9 +6,9 @@ export default function Home() {
     response.json().then((data) => console.log(data)),
   );
 
-  const checking = trpc.example.exampleInput.useQuery("SomeString");
+  const {data: exampleCall , isLoading} = trpc.example.exampleInput.useQuery("SomeString");
 
-  if (!checking.data) {
+  if (isLoading) {
     return <div>Loading...</div>;
   }
 
@@ -19,7 +19,7 @@ export default function Home() {
         <div className="mx-4">
           <Button />
         </div>
-        <div>{JSON.stringify(checking.data)}</div>
+        <div>{JSON.stringify(exampleCall)}</div>
       </div>
     </>
   );
