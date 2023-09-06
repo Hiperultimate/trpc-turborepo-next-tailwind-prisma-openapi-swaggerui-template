@@ -2,10 +2,12 @@ import { Button } from "ui";
 import { trpc } from "../utils/trpc";
 
 export default function Home() {
+  // An API call for NextJS Server
   fetch("http://localhost:3000/api/hello").then((response) =>
     response.json().then((data) => console.log(data)),
   );
 
+  // API call for apps/api Express tRPC server
   const { data: exampleCall, isLoading } =
     trpc.example.exampleInput.useQuery("SomeString");
 
@@ -15,13 +17,13 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col ">
-        <span className="p-5 pt-2 text-lg font-bold ">Web Page</span>
-        <div className="mx-4">
+      <div className="flex flex-col mx-4">
+        <span className="pt-2 text-lg font-bold ">Web Page</span>
+        <div className="my-2">
           <Button />
         </div>
-        <div className="m-4 flex flex-col">
-          <span>User Details</span>
+        <div className="flex flex-col">
+          <span className="font-bold my-2">User Details</span>
           <div>
             ID : <span>{exampleCall?.id}</span>
           </div>

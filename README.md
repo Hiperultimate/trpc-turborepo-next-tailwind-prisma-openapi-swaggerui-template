@@ -1,14 +1,10 @@
-# Turborepo starter
+# tRPC Server Client Turborepo Template
 
-This is an official starter Turborepo.
+This is a straightforward monorepo that includes an Express tRPC server. The server interacts with a Next.js application and provides a wide range of features through tRPC.
 
-## Using this example
+With this template, you can quickly set up a powerful server-client architecture for your web application. The combination of Express, tRPC, and Next.js offers a seamless development experience and enables you to build robust and efficient applications.
 
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
+Feel free to use this template as a starting point for your projects and customize it according to your specific requirements.
 
 ## What's inside?
 
@@ -16,29 +12,22 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `docs`: a [Next.js](https://nextjs.org/) app that utilizes [TailwindCSS](https://tailwindcss.com/).
+- `api`: This is a TypeScript Express [tRPC](https://trpc.io/) server. It provides the backend functionality for your application and handles API requests.
+- `web`: another [Next.js](https://nextjs.org/) app with [tRPC](https://trpc.io/) Client which interacts with `api` package. It also incorporates [TailwindCSS](https://tailwindcss.com/) for styling.
+- `ui`: a stub React component library shared by both `web` and `docs` applications. It includes reusable components and is styled using [TailwindCSS](https://tailwindcss.com/).
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- `tailwind-config`: tailwind configuration which is used throughout the monorepo
+- `prettier-config`: This package includes the styling configuration for Prettier, ensuring consistent code formatting throughout the monorepo
 
 ### Build
 
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
-pnpm build
+cd monorepo-template
+yarn
 ```
 
 ### Develop
@@ -46,8 +35,8 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
-pnpm dev
+cd monorepo-template
+yarn run dev
 ```
 
 ### Remote Caching
@@ -57,7 +46,7 @@ Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo
 By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
 
 ```
-cd my-turborepo
+cd monorepo-template
 npx turbo login
 ```
 
@@ -69,13 +58,24 @@ Next, you can link your Turborepo to your Remote Cache by running the following 
 npx turbo link
 ```
 
-## Useful Links
+## Features in Progress
 
-Learn more about the power of Turborepo:
+- tRPC OpenAPI integration
+- tRPC Swagger support
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+Feel free to suggest more features.
+
+## Contributions
+
+I welcome contributions to help improve this template! If you have any issues or recommendations for enhancements, please feel free to raise them. Your feedback is valuable and will help me make this template even better.
+
+To contribute, you can:
+
+- **Raise an issue**: If you encounter any problems or have suggestions for improvements, please create an issue on this GitHub repository. I will review it and work together with you to find a solution.
+
+- **Submit a pull request**: If you have a specific improvement in mind, you can fork the repository, make your changes, and submit a pull request. I will review your changes and merge them if they align with the project's goals.
+
+By contributing to this template, you'll be helping not only me but also the community by making it more robust and user-friendly!
+At the moment I would really appreciate some help with file structure recommendations for Turborepo for the technologies inside the repository. 
+
+Thank you for your support!
