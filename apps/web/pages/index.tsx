@@ -6,7 +6,8 @@ export default function Home() {
     response.json().then((data) => console.log(data)),
   );
 
-  const {data: exampleCall , isLoading} = trpc.example.exampleInput.useQuery("SomeString");
+  const { data: exampleCall, isLoading } =
+    trpc.example.exampleInput.useQuery("SomeString");
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -19,7 +20,19 @@ export default function Home() {
         <div className="mx-4">
           <Button />
         </div>
-        <div>{JSON.stringify(exampleCall)}</div>
+        <div className="m-4 flex flex-col">
+          <span>User Details</span>
+          <div>
+            ID : <span>{exampleCall?.id}</span>
+          </div>
+          <div>
+            Name : <span>{exampleCall?.name}</span>
+          </div>
+          <div>
+            User Session :{" "}
+            <span>{exampleCall?.hasSession ? "true" : "false"}</span>
+          </div>
+        </div>
       </div>
     </>
   );
