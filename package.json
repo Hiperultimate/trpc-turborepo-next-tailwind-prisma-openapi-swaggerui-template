@@ -14,7 +14,7 @@
     "turbo": "latest",
     "dotenv-cli": "^7.3.0"
   },
-  "name": "monorepo-template",
+  "name": "trpc-server-client-turborepo-template",
   "packageManager": "yarn@1.22.19",
   "workspaces": [
     "apps/*",

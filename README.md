@@ -26,16 +26,18 @@ This Turborepo includes the following packages/apps:
 To build all apps and packages, run the following command:
 
 ```
-cd monorepo-template
+cd trpc-server-client-turborepo-template
 yarn
 ```
 
 ### Develop
 
+**Setting up .env file** - Copy .env.example file and rename it to .env in the root directory
+
 To develop all apps and packages, run the following command:
 
 ```
-cd monorepo-template
+cd trpc-server-client-turborepo-template
 yarn run dev
 ```
 
@@ -46,7 +48,7 @@ Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo
 By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
 
 ```
-cd monorepo-template
+cd trpc-server-client-turborepo-template
 npx turbo login
 ```
 
