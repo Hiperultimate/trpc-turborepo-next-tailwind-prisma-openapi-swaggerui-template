@@ -9,7 +9,7 @@ export default function Home() {
 
   // API call for apps/api Express tRPC server
   const { data: exampleCall, isLoading } =
-    trpc.example.exampleInput.useQuery("SomeString");
+    trpc.example.exampleInput.useQuery({id : "someStringId"});
 
   if (isLoading) {
     return <div>Loading...</div>;
