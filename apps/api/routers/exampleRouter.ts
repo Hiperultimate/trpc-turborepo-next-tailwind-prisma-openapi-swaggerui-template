@@ -4,7 +4,7 @@ import { z } from "zod";
 export const exampleRouter = t.router({
     // http://localhost:3002/api/example.exampleApi
     exampleApi: publicProcedure
-        .meta({ openapi: { method: "GET", path: "/example.exampleApi",  tags: ["example"] , description: "Calling exampleApi"} })
+        .meta({ openapi: { method: "GET", path: "/example.exampleApi", tags: ["example"], description: "Calling exampleApi" } })
         .input(z.void())
         .output(z.object({ message: z.string() }))
         .query(() => {
@@ -13,7 +13,7 @@ export const exampleRouter = t.router({
 
     // http://localhost:3002/api/example.exampleInput?id=123123
     exampleInput: publicProcedure
-        .meta({ openapi : {method: "GET", path: "/example.exampleInput", tags: ["example"] }})
+        .meta({ openapi: { method: "GET", path: "/example.exampleInput", tags: ["example"] } })
         .input(z.object({ id: z.string() }))
         .output(z.object({ id: z.string(), name: z.string(), hasSession: z.boolean() }))
         .query(({ input, ctx }) => {
@@ -23,10 +23,7 @@ export const exampleRouter = t.router({
             return { id: input.id, name: 'Bilbo', hasSession: ctx.userSession };
         }),
 
-    superSimple: publicProcedure
-        .meta({ openapi : {method: "POST", path: "/example.superSimple", tags: ["example"] }})
-        .input(z.object({simpleInput : z.string()}))
-        .output(z.object({ givenString: z.string() }))
+    superSimple: publicProcedure.meta({ openapi: { method: "POST", path: "/example.superSimple", tags: ["example"] } }).input(z.object({ simpleInput: z.string() })).output(z.object({ givenString: z.string() }))
         .mutation(({ input }) => {
             return { givenString: input.simpleInput }
         }),
