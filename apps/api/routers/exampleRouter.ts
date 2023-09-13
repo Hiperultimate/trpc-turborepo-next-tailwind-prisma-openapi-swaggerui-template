@@ -38,8 +38,12 @@ export const exampleRouter = t.router({
       return { givenString: input.simpleInput };
     }),
 
-  // Change userSession to true / false and try this procedure
-  protectedExample: protectedProcedure.query(({ ctx }) => {
-    return { context: ctx.userSession, message: "Protected example message" };
-  }),
+  // Change userSession to true / false in /context.ts for this procedure to work
+  protectedExample: protectedProcedure
+    .meta({ openapi: { method: "GET", path: "/example.protectedExample", tags: ["example"] } })
+    .input(z.void())
+    .output(z.object({ context: z.boolean(), message: z.string() }))
+    .query(({ ctx }) => {
+      return { context: ctx.userSession, message: "Protected example message" };
+    }),
 });
