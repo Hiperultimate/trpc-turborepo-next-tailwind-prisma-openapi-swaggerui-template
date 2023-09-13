@@ -1,4 +1,4 @@
-import * as trpcExpress from "@trpc/server/adapters/express";
+import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import cors from "cors";
 import express from "express";
 import { createContext } from "./context";
@@ -19,7 +19,7 @@ app.use(cors());
 // Handle incoming tRPC requests
 app.use(
   "/api/trpc",
-  trpcExpress.createExpressMiddleware({
+  createExpressMiddleware({
     router: appRouter,
     createContext,
   }),

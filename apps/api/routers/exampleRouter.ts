@@ -1,4 +1,5 @@
-import { t, publicProcedure, protectedProcedure } from "../trpc";
+import { t } from "../trpc";
+import { publicProcedure, protectedProcedure } from "../procedures";
 import { z } from "zod";
 
 export const exampleRouter = t.router({
