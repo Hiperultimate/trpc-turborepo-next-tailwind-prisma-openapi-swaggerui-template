@@ -1,4 +1,4 @@
-import { TRPCError, inferAsyncReturnType, initTRPC } from "@trpc/server";
+import { inferAsyncReturnType, initTRPC } from "@trpc/server";
 import { createContext } from "./context";
 import { OpenApiMeta } from "trpc-openapi";
 
