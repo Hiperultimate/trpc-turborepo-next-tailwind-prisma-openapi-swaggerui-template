@@ -24,7 +24,8 @@
     "react-dom": "18.2.0",
     "typescript": "5.2.2",
     "ui": "*",
-    "zod": "^3.22.2"
+    "zod": "^3.22.2",
+    "@template/trpc": "*"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.15",

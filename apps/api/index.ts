@@ -1,13 +1,13 @@
-import { createContext } from "@template/trpc/context";
-import { createExpressMiddleware } from "@template/trpc/middlewares/express/trpcExressMiddleware";
-import { appRouter } from "@template/trpc/routers/root";
+import { createContext } from "@template/trpc/server/context";
+import { createExpressMiddleware } from "@template/trpc/server/middlewares/express/trpcExressMiddleware";
+import { appRouter } from "@template/trpc/server/routers/root";
 import cors from "cors";
 import express from "express";
 
 import swaggerUi from "swagger-ui-express";
 
-import { createOpenApiExpressMiddleware } from "@template/trpc/middlewares/openapi/expressMiddleware";
-import { openApiDocument } from "@template/trpc/openapi";
+import { createOpenApiExpressMiddleware } from "@template/trpc/server/middlewares/openapi/expressMiddleware";
+import { openApiDocument } from "@template/trpc/server/openapi";
 
 const port: number = 3002 as const;
 

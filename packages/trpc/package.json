@@ -1,7 +1,6 @@
 {
   "name": "@template/trpc",
   "version": "1.0.0",
-  "description": "",
   "main": "index.ts",
   "private": true,
   "scripts": {
@@ -11,10 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@trpc/client": "^10.38.2",
     "@trpc/server": "^10.38.2",
     "@types/express": "^4.17.17",
     "@types/node": "^20.6.0",
     "trpc-openapi": "^1.2.0",
     "zod": "^3.22.2"
-  }
+  },
+  "description": ""
 }

@@ -473,6 +473,11 @@
   resolved "https://registry.yarnpkg.com/@trpc/client/-/client-10.38.1.tgz#fc9bb42693076833c81a36ec391717f483666148"
   integrity sha512-kY7ZV7Eco5SeFIGJX6OBg7AAKkiMt5+1N+GC7N1lTZszrw95ZiNgtkZ5TI6+Un4O+RqrOcqqast6MeExCoyZhQ==
 
+"@trpc/client@^10.38.2":
+  version "10.38.2"
+  resolved "https://registry.yarnpkg.com/@trpc/client/-/client-10.38.2.tgz#ee312fb7190a348411103680aaa34fc778715e45"
+  integrity sha512-M76i9952a5qa+X1dekhn359jVnCrGrM/BH4Woc4O/RdSpEG7xQbwUHhQv1Y75lQ/+feVRUMooD7u3NtZ0/TVUQ==
+
 "@trpc/next@^10.38.1":
   version "10.38.1"
   resolved "https://registry.yarnpkg.com/@trpc/next/-/next-10.38.1.tgz#f7264cbc11fd38933edf6c970846cb984be6fd08"

@@ -1,6 +1,6 @@
-import { t } from "../trpc";
-import { publicProcedure, protectedProcedure } from "../procedures";
 import { z } from "zod";
+import { protectedProcedure, publicProcedure } from "../procedures";
+import { t } from "../trpc";
 
 export const exampleRouter = t.router({
   // http://localhost:3002/api/example.exampleApi
