@@ -2,7 +2,7 @@
 
 This is a straightforward monorepo that includes an Express tRPC server. The server interacts with a Next.js application and provides a wide range of features through tRPC.
 
-With this template, you can quickly set up a powerful server-client architecture for your web application. The combination of Express, tRPC, and Next.js offers a seamless development experience and enables you to build robust and efficient applications.
+With this template, you can quickly set up a powerful server-client architecture for your web application. The combination of Express, tRPC and Next.js offers a seamless development experience and enables you to build robust and efficient applications with the ease of adding API documentation through OpenApi and SwaggerUI which comes integrated into this template.
 
 Feel free to use this template as a starting point for your projects and customize it according to your specific requirements.
 
@@ -13,8 +13,9 @@ This Turborepo includes the following packages/apps:
 ### Apps and Packages
 
 - `docs`: a [Next.js](https://nextjs.org/) app that utilizes [TailwindCSS](https://tailwindcss.com/).
-- `api`: This is a TypeScript Express [tRPC](https://trpc.io/) server. It provides the backend functionality for your application and handles API requests.
+- `server`: This is a TypeScript Express [tRPC](https://trpc.io/) server with [swaggerUI](https://github.com/swagger-api/swagger-ui). It provides the backend functionality for your application and handles API requests.
 - `web`: another [Next.js](https://nextjs.org/) app with [tRPC](https://trpc.io/) Client which interacts with `api` package. It also incorporates [TailwindCSS](https://tailwindcss.com/) for styling.
+- `trpc`: everything related to [tRPC](https://trpc.io/) including procedures and [trpc-openapi](https://github.com/jlalmes/trpc-openapi) exists in this package folder which is currently being used by `server`.
 - `ui`: a stub React component library shared by both `web` and `docs` applications. It includes reusable components and is styled using [TailwindCSS](https://tailwindcss.com/).
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
@@ -59,13 +60,6 @@ Next, you can link your Turborepo to your Remote Cache by running the following 
 ```
 npx turbo link
 ```
-
-## Features in Progress
-
-- tRPC OpenAPI integration
-- tRPC Swagger support
-
-Feel free to suggest more features.
 
 ## Contributions
 
