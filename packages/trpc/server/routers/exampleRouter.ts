@@ -47,4 +47,19 @@ export const exampleRouter = t.router({
     .query(({ ctx }) => {
       return { context: ctx.userSession, message: "Protected example message" };
     }),
+
+  prismaExample: publicProcedure
+    .meta({ openapi: { method: "GET", path: "/example.prismaExample", tags: ["exampleDB"] } })
+    .input(z.void())
+    .output(
+      z.object({
+        context: z.boolean(),
+        dbData: z.array(z.object({ id: z.number(), createdAt: z.date(), name: z.string() })),
+      }),
+    )
+    .query(async ({ ctx }) => {
+      const getExampleData = await ctx.prisma.example.findMany();
+      console.log("Database Data : ", getExampleData);
+      return { context: ctx.userSession, dbData: getExampleData };
+    }),
 });
