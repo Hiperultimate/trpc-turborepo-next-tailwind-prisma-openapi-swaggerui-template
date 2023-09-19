@@ -1,12 +1,13 @@
 {
-  "name": "prisma",
+  "name": "@template/prisma",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prisma-migrate": "dotenv -e ../../.env -- prisma migrate dev",
-    "prisma-studio": "dotenv -e ../../.env -- prisma studio"
+    "migrate": "prisma migrate dev",
+    "studio": "prisma studio",
+    "db-up": "docker-compose up -d"
   },
   "keywords": [],
   "author": "",
