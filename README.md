@@ -12,7 +12,7 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app that utilizes [TailwindCSS](https://tailwindcss.com/).
+- `docs`: A simple [Next.js](https://nextjs.org/) app that can be used to compare changes made to the `apps/web` application. It serves as a reference to understand the modifications.
 - `server`: This is a TypeScript Express [tRPC](https://trpc.io/) server with [swaggerUI](https://github.com/swagger-api/swagger-ui). It provides the backend functionality for your application and handles API requests.
 - `web`: another [Next.js](https://nextjs.org/) app with [tRPC](https://trpc.io/) Client which interacts with `api` package. It also incorporates [TailwindCSS](https://tailwindcss.com/) for styling.
 - `trpc`: everything related to [tRPC](https://trpc.io/) including procedures and [trpc-openapi](https://github.com/jlalmes/trpc-openapi) exists in this package folder which is currently being used by `server`.
