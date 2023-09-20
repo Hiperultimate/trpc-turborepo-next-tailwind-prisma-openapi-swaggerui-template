@@ -23,12 +23,12 @@ export const exampleRouter = t.router({
   exampleInput: publicProcedure
     .meta({ openapi: { method: "GET", path: "/example.exampleInput", tags: ["example"] } })
     .input(z.object({ id: z.string() }))
-    .output(z.object({ id: z.string(), name: z.string(), hasSession: z.boolean() }))
+    .output(z.object({ id: z.string(), hasSession: z.boolean() }))
     .query(({ input, ctx }) => {
       // return { id: req.input, name: 'Bilbo'};
 
       // Add context in context.ts file and call it using req.ctx
-      return { id: input.id, name: "Bilbo", hasSession: ctx.userSession };
+      return { id: input.id, hasSession: ctx.userSession };
     }),
 
   superSimple: publicProcedure
@@ -46,5 +46,20 @@ export const exampleRouter = t.router({
     .output(z.object({ context: z.boolean(), message: z.string() }))
     .query(({ ctx }) => {
       return { context: ctx.userSession, message: "Protected example message" };
+    }),
+
+  prismaExample: publicProcedure
+    .meta({ openapi: { method: "GET", path: "/example.prismaExample", tags: ["exampleDB"] } })
+    .input(z.void())
+    .output(
+      z.object({
+        context: z.boolean(),
+        dbData: z.array(z.object({ id: z.number(), createdAt: z.date(), name: z.string() })),
+      }),
+    )
+    .query(async ({ ctx }) => {
+      const getExampleData = await ctx.prisma.example.findMany();
+      console.log("Database Data : ", getExampleData);
+      return { context: ctx.userSession, dbData: getExampleData };
     }),
 });

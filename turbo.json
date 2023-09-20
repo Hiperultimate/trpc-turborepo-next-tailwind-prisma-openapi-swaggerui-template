@@ -15,7 +15,7 @@
     },
     "dev": {
       "cache": false,
-      "persistent": true,
+      "persistent": false,
       "dotEnv": [
         ".env.development.local",
         ".env.local",
@@ -25,6 +25,9 @@
     },
     "test": {
       "dotEnv": [".env.test.local", ".env.test", ".env"]
+    },
+    "migrate":{
+      "cache": false
     },
     "lint": {}
   }
