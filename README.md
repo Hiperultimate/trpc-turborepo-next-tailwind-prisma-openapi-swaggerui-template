@@ -17,10 +17,45 @@ This Turborepo includes the following packages/apps:
 - `web`: another [Next.js](https://nextjs.org/) app with [tRPC](https://trpc.io/) Client which interacts with `api` package. It also incorporates [TailwindCSS](https://tailwindcss.com/) for styling.
 - `trpc`: everything related to [tRPC](https://trpc.io/) including procedures and [trpc-openapi](https://github.com/jlalmes/trpc-openapi) exists in this package folder which is currently being used by `server`.
 - `ui`: a stub React component library shared by both `web` and `docs` applications. It includes reusable components and is styled using [TailwindCSS](https://tailwindcss.com/).
+- `prisma`: A powerful database ORM that offers type safety and is utilized by the `trpc` package to enhance the developer experience.
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 - `tailwind-config`: tailwind configuration which is used throughout the monorepo
 - `prettier-config`: This package includes the styling configuration for Prettier, ensuring consistent code formatting throughout the monorepo
+
+### Project Setup
+
+In the root directory, install dependencies by running.
+
+```
+cd trpc-server-client-turborepo-template
+yarn
+```
+
+**Setting up .env file** - Copy .env.example file and rename it to .env in the root directory
+
+#### Setting up Database
+
+To configure the database for your project, you have two options:
+
+1. If you have postgresql database ready, add the connection string to `DATABASE_URL`.
+
+2. If you don't have a database and have Docker installed on your system, you can easily set it up using the following script command in your CLI:
+
+```
+yarn prisma db-up
+```
+
+Note : To check the environment details you can find the docker-compose file in `packages/prisma/docker-compose.yaml`
+
+### Scripts
+
+Scripts can be ran in the root directory by typing the following in cli.
+
+- `yarn run dev` : Runs the entire monorepo.
+- `yarn prisma studio` : Runs prisma studio from `package/prisma`
+- `yarn prisma migrate` : Runs prisma database migrations from `package/prisma`
+- `yarn prisma db-up` : Installs/Runs postgresql image from `package/prisma` in Docker.
 
 ### Build
 
@@ -29,17 +64,6 @@ To build all apps and packages, run the following command:
 ```
 cd trpc-server-client-turborepo-template
 yarn
-```
-
-### Develop
-
-**Setting up .env file** - Copy .env.example file and rename it to .env in the root directory
-
-To develop all apps and packages, run the following command:
-
-```
-cd trpc-server-client-turborepo-template
-yarn run dev
 ```
 
 ### Remote Caching
@@ -72,6 +96,6 @@ To contribute, you can:
 - **Submit a pull request**: If you have a specific improvement in mind, you can fork the repository, make your changes, and submit a pull request. I will review your changes and merge them if they align with the project's goals.
 
 By contributing to this template, you'll be helping not only me but also the community by making it more robust and user-friendly!
-At the moment I would really appreciate some help with file structure recommendations for Turborepo for the technologies inside the repository. 
+At the moment I would really appreciate some help with file structure recommendations for Turborepo for the technologies inside the repository.
 
 Thank you for your support!
