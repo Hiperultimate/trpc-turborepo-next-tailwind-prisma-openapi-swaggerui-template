@@ -23,12 +23,12 @@ export const exampleRouter = t.router({
   exampleInput: publicProcedure
     .meta({ openapi: { method: "GET", path: "/example.exampleInput", tags: ["example"] } })
     .input(z.object({ id: z.string() }))
-    .output(z.object({ id: z.string(), name: z.string(), hasSession: z.boolean() }))
+    .output(z.object({ id: z.string(), hasSession: z.boolean() }))
     .query(({ input, ctx }) => {
       // return { id: req.input, name: 'Bilbo'};
 
       // Add context in context.ts file and call it using req.ctx
-      return { id: input.id, name: "Bilbo", hasSession: ctx.userSession };
+      return { id: input.id, hasSession: ctx.userSession };
     }),
 
   superSimple: publicProcedure
