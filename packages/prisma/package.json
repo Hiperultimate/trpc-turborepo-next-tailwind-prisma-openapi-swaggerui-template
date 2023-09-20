@@ -2,7 +2,8 @@
   "name": "@template/prisma",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "./index.ts",
+  "types": "./index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "prisma migrate dev",

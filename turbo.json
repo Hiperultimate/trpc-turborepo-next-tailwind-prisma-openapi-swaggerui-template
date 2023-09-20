@@ -26,6 +26,9 @@
     "test": {
       "dotEnv": [".env.test.local", ".env.test", ".env"]
     },
+    "migrate":{
+      "cache": false
+    },
     "lint": {}
   }
 }
