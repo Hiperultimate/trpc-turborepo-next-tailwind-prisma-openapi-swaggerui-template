@@ -16,16 +16,16 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: A simple [Next.js](https://nextjs.org/) app that can be used to compare changes made to the `apps/web` application. It serves as a reference to understand the modifications.
-- `server`: This is a TypeScript Express [tRPC](https://trpc.io/) server with [swaggerUI](https://github.com/swagger-api/swagger-ui). It provides the backend functionality for your application and handles API requests.
-- `web`: another [Next.js](https://nextjs.org/) app with [tRPC](https://trpc.io/) Client which interacts with `api` package. It also incorporates [TailwindCSS](https://tailwindcss.com/) for styling.
-- `trpc`: everything related to [tRPC](https://trpc.io/) including procedures and [trpc-openapi](https://github.com/jlalmes/trpc-openapi) exists in this package folder which is currently being used by `server`.
-- `ui`: a stub React component library shared by both `web` and `docs` applications. It includes reusable components and is styled using [TailwindCSS](https://tailwindcss.com/).
-- `prisma`: A powerful database ORM that offers type safety and is utilized by the `trpc` package to enhance the developer experience.
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-- `tailwind-config`: tailwind configuration which is used throughout the monorepo
-- `prettier-config`: This package includes the styling configuration for Prettier, ensuring consistent code formatting throughout the monorepo
+- `apps/docs`: A simple [Next.js](https://nextjs.org/) app that can be used to compare changes made to the `apps/web` application. It serves as a reference to understand the modifications.
+- `apps/server`: This is a TypeScript Express [tRPC](https://trpc.io/) server with [swaggerUI](https://github.com/swagger-api/swagger-ui). It provides the backend functionality for your application and handles API requests. `packages/trpc` is connected to the server and contains all the procedures.
+- `apps/web`: another [Next.js](https://nextjs.org/) app with [tRPC](https://trpc.io/) Client which interacts with `api` package. It also incorporates [TailwindCSS](https://tailwindcss.com/) for styling.
+- `packages/trpc`: everything related to [tRPC](https://trpc.io/) including procedures and [trpc-openapi](https://github.com/jlalmes/trpc-openapi) exists in this package folder which is currently being used by `server`.
+- `packages/ui`: a stub React component library shared by both `web` and `docs` applications. It includes reusable components and is styled using [TailwindCSS](https://tailwindcss.com/).
+- `packages/prisma`: A powerful database ORM that offers type safety and is utilized by the `trpc` package to enhance the developer experience.
+- `packages/eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `packages/tsconfig`: `tsconfig.json`s used throughout the monorepo
+- `packages/tailwind-config`: tailwind configuration which is used throughout the monorepo
+- `packages/prettier-config`: This package includes the styling configuration for Prettier, ensuring consistent code formatting throughout the monorepo
 
 ### Project Setup
 
