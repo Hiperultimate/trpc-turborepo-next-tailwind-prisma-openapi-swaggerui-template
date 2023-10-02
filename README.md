@@ -1,5 +1,9 @@
 # tRPC Server Client Turborepo Template
 
+🚧 **This is a TEMPLATE** 🚧
+
+A clean **template** designed to kickstart your project, sparing you the effort of configuring everything from scratch.
+
 This is a straightforward monorepo that includes an Express tRPC server with Prisma ORM. The server interacts with a Next.js application and provides a wide range of features through tRPC.
 
 With this template, you can quickly set up a powerful server-client architecture for your web application. The combination of Express, tRPC, Prisma and Next.js offers a seamless development experience and enables you to build robust and efficient applications with the ease of adding API documentation through OpenApi and SwaggerUI which comes integrated into this template.
